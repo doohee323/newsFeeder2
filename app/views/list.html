@@ -1,0 +1,38 @@
+
+<div id="listCtrl" ng-controller="ListCtrl" data-ng-init="init()">
+  <!--md-toolbar class="md-theme-light" ng-click="showListBottomSheet($event)"-->
+  <md-toolbar class="md-theme-light">
+    <h1 class="md-toolbar-tools">
+			<div ng-click="showGridBottomSheet($event)">
+	      <span>The New York Times <br>({{published_date}})</span>
+    	</div>
+			<div style="position: absolute;right: 0px;">
+      	<a ng-click="retrieve()" title="next list" style="cursor: pointer;">
+          <img src="images/next.png" style="margin-right:0px;">
+        </a>
+    	</div>
+    </h1>
+  </md-toolbar>
+  <md-content>
+    <md-list>
+      <md-item ng-repeat="item in storys">
+        <md-item-content ng-click="open('{{item}}')">
+          <div class="md-tile-left">
+            <img ng-src="{{item.multimedia}}" alt="{{per_facet}}" style="width:100px;height:100px;margin:5px;cursor: pointer;">
+            <p>
+              {{item.indx}}
+            </p>
+          </div>
+          <div class="md-tile-content" style="margin-left:5px;padding-bottom: 2px;padding-top: 5px;">
+            <h3>{{item.title}}</h3>
+            <h4>{{item.org_facet}}</h4>
+            <p>
+              {{item.abstract | shortener}}
+            </p>
+          </div>
+        </md-item-content>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-item>
+    </md-list>
+  </md-content>
+</div>

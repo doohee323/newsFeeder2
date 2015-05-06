@@ -1,0 +1,30 @@
+
+<div ng-controller="StoryCtrl" layout="column" style="padding-bottom: 15px;" data-ng-init="onload()">
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools" ng-click="goBack()" style="background-color: #f2f2f2;">
+      <span class="md-flex">{{item.title}} ({{item.published_date}})</span>
+    </div>
+		<div style="position: absolute;top: 0px;right: 0px;">
+    	<a ng-click="goBack()" title="next list" style="cursor: pointer;">
+        <img src="images/prev.png" style="margin-right:0px;">
+      </a>
+  	</div>
+  </md-toolbar>
+  <md-content class="md-padding">
+		<div>
+		  <div>
+		    <img ng-src="{{item.normal}}" alt="{{per_facet}}" style="margin-left:5px;cursor: pointer;">
+		  </div>
+		  <h3 style="margin-top: 10px;margin-bottom: 10px;">{{item.title}}</h3>
+		  <h4 style="margin-top: 0px;margin-bottom: 0px;">{{item.org_facet}} - {{item.per_facet}}</h4>
+		  <p>
+		    {{item.abstract}}
+		  </p>
+		  <div>
+			  <h3><a href='{{item.url}}'>{{item.url}}</a></h3>
+		  </div>
+		</div>
+  </md-content>
+</div>
+
+

@@ -1,12 +1,4 @@
 node_modules
+dist
 .tmp
-.sass-cache
-.idea
-*.iml
-
-# sublime setting
-*.sublime-*
-/dist
-/logs
-/upload
-/bower_components
+bower_components
